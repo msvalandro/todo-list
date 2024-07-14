@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native'
 export const styles = StyleSheet.create({
   inputContainer: {
     height: 52,
-    paddingHorizontal: 24,
     marginTop: -26,
 
     flexDirection: 'row',
@@ -33,6 +32,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#1A1A1A',
     marginTop: -26,
+    paddingHorizontal: 24,
   },
-  listHeader: {},
 })
