@@ -43,10 +43,31 @@ export function Home() {
       finished: false,
     },
   ])
+  const [newTask, setNewTask] = useState('')
 
   const concludedTasks = useMemo(() => {
     return tasks.filter((task) => task.finished === true).length
   }, [tasks])
+
+  function handleAddNewTask() {
+    if (newTask === '') {
+      return
+    }
+
+    setTasks((state) => [
+      ...state,
+      {
+        id: new Date().toISOString(),
+        content: newTask,
+        finished: false,
+      },
+    ])
+    setNewTask('')
+  }
+
+  function handleRemoveTask(id: string) {
+    setTasks((state) => state.filter((task) => task.id !== id))
+  }
 
   function handleFinishTask(id: string) {
     setTasks((state) =>
@@ -66,9 +87,11 @@ export function Home() {
             style={styles.input}
             placeholder="Adicione uma nova tarefa"
             placeholderTextColor="#808080"
+            value={newTask}
+            onChangeText={setNewTask}
           />
 
-          <TouchableOpacity style={styles.addButton}>
+          <TouchableOpacity style={styles.addButton} onPress={handleAddNewTask}>
             <PlusCircle size={16} color="#f2f2f2" />
           </TouchableOpacity>
         </View>
@@ -84,6 +107,7 @@ export function Home() {
               content={item.content}
               finished={item.finished}
               onFinish={handleFinishTask}
+              onRemove={handleRemoveTask}
             />
           )}
           ListEmptyComponent={ListEmpty}

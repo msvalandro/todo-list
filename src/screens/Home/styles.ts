@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     borderRadius: 6,
 
     fontSize: 16,
+    color: '#F2F2F2',
 
     flex: 1,
   },
