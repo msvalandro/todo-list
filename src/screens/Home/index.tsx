@@ -47,7 +47,13 @@ export function Home() {
     return tasks.filter((task) => task.finished === true).length
   }, [tasks])
 
-  function handleFinishTask() {}
+  function handleFinishTask(id: string) {
+    setTasks((state) =>
+      state.map((task) =>
+        task.id === id ? { ...task, finished: !task.finished } : { ...task },
+      ),
+    )
+  }
 
   return (
     <>

@@ -14,11 +14,15 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   content: {
-    marginHorizontal: 8,
+    marginHorizontal: 12,
     fontSize: 14,
     color: '#F2F2F2',
 
     flex: 1,
+  },
+  contentFinished: {
+    color: '#808080',
+    textDecorationLine: 'line-through',
   },
   checkbox: {
     height: 18,
@@ -27,5 +31,12 @@ export const styles = StyleSheet.create({
     borderRadius: 999,
     borderWidth: 2,
     borderColor: '#4EA8DE',
+
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  checkboxFinished: {
+    backgroundColor: '#5E60CE',
+    borderColor: '#5E60CE',
   },
 })
