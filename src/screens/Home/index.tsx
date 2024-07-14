@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react'
 import { FlatList, TextInput, TouchableOpacity, View } from 'react-native'
 
 import { Header } from '../../components/Header'
+import { ListEmpty } from '../../components/ListEmpty'
 import { ListHeader } from '../../components/ListHeader'
 import { Task } from '../../components/Task'
 import { styles } from './styles'
@@ -85,6 +86,7 @@ export function Home() {
               onFinish={handleFinishTask}
             />
           )}
+          ListEmptyComponent={ListEmpty}
         />
       </View>
     </>
